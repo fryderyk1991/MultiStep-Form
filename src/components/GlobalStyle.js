@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         align-items: center;
         background-color: #31353A;
+        color: #929aab;
+    }
+    label, input {
+        color: inherit;
     }
 `;
 

@@ -4,7 +4,6 @@ const InputStyled = styled.input`
   padding: 1rem 1.2rem;
   background: #31363b;
   outline: none;
-  color: #929aab;
   border-radius: 20px;
   border: none;
   background: #31363b;
