@@ -5,7 +5,7 @@ const BarContainer = styled.div`
   height: 10px;
   border-radius: 10px;
   background: #31362b;
-  box-shadow: inset 8px 8px 16px #292d32, inset -8px -8px 16px #393f44;
+  box-shadow: inset 8px 8px 16px #292d32, inset -8px -8px 16px #393f49;
 `;
 
 const Bar = styled.div`
@@ -13,7 +13,7 @@ const Bar = styled.div`
     height: 100%;
     border-radius: 10px;
     background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
-    opacity: 0.8;
+    opacity: 0.9;
 `
 
 export { BarContainer, Bar };

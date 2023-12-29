@@ -1,15 +1,15 @@
 import ResetStyle from "./components/ResetStyle";
 import GlobalStyle from "./components/GlobalStyle";
-import Progressbar from "./components/Progressbar/Progressbar";
+import DropDown from "./components/DropDown/DropDown";
 
 const App = () => {
   return (
     <>
-    <ResetStyle />
-    <GlobalStyle />
-    <Progressbar />
+      <ResetStyle />
+      <GlobalStyle />
+      <DropDown />
     </>
-  )
+  );
 }
 
 
