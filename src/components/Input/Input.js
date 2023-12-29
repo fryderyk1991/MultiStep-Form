@@ -1,8 +1,13 @@
-import { InputStyled } from "./Input.styled";
+import { InputStyled, RadioInputStyled } from "./Input.styled";
 const Input = () => {
     return (
-        <InputStyled />
+        <>
+           <RadioInputStyled type="radio" /> 
+           <InputStyled />
+        </>
+     
     )
 }
 
-export default Input ;
+
+export default Input;

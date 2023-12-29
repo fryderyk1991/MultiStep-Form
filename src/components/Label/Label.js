@@ -1,9 +1,10 @@
 import { LabelStyled } from "./Label.styled";
-
 const Label = () => {
-    return (
-        <LabelStyled>Name</LabelStyled>
-    )
-} 
+  return (
+    <>
+    <LabelStyled></LabelStyled>
+    </>
+  );
+}; 
 
 export default Label;
