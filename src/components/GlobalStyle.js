@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     }
     label, input {
         color: inherit;
-        display: block;
+        /* display: block; */
     }
 `;
 

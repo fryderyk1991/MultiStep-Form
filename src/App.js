@@ -1,13 +1,15 @@
 import ResetStyle from "./components/ResetStyle";
 import GlobalStyle from "./components/GlobalStyle";
-import DropDown from "./components/DropDown/DropDown";
-
+import Input from "./components/Input/Input";
+import Label from "./components/Label/Label";
 const App = () => {
   return (
     <>
       <ResetStyle />
       <GlobalStyle />
-      <DropDown />
+      
+      <Input />
+      <Label>Male</Label>
     </>
   );
 }

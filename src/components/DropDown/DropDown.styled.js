@@ -1,21 +1,26 @@
 import styled from "styled-components";
 
 const DropDownList = styled.ul`
-  opacity: 0;
   position: absolute;
   top: 45px;
   border-radius: 10px;
   left: 0;
   width: 100%;
   list-style-type: none;
-  padding: 0.5rem 1rem;
   box-shadow: inset 6px 6px 12px #2c3035, inset -6px -6px 12px #363c41;
-  transition: all 0.3s ease;
+  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
+  transition: height 200ms ease-in;
 `
 const DropDownListItem = styled.li`
-  margin: 1rem 0;
+  padding: 1rem;
   z-index: 10;
   cursor: pointer;
+  &:hover {
+    border-radius: 1rem;
+    color: #f96d00;
+    opacity: 0.8;
+    transition: color 100ms ease;
+  }
 `
 const DropdownContainer = styled.div`
   position: relative;
@@ -29,9 +34,6 @@ const DropdownContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &:hover ${DropDownList} {
-      opacity: 1;
-    }
 `;
 
 const DropDownBtn = styled.button`

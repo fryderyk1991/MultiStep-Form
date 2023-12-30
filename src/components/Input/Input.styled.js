@@ -11,30 +11,46 @@ const InputStyled = styled.input`
 `;
 
 const RadioInputStyled = styled.input.attrs({ type: "radio" })`
- height: 25px;
-  width: 25px;
+display: none;
+`;
+const LabelStyled = styled.label`
+  position: relative;
   cursor: pointer;
-  position: absolute;
-  opacity: 0; /* Hide the actual radio input */
 
-  &:checked + label {
+  ${RadioInputStyled}:checked + &::before {
     opacity: 1;
-    background-color: #ff5733; /* Change the background color when checked */
+    visibility: visible;
+    transform: scale(1);
   }
 
-  & + label {
-    opacity: 1;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: #d3d3d3; /* Default background color */
-    display: inline-block;
-    position: relative;
-    transition:  all 0.3s ease; /* Add a smooth transition effect */
+  ${RadioInputStyled} + & {
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+    &::after {
+      height: 15px;
+      width: 15px;
+      border: 1px solid #f96d00;
+      margin-left: 10px;
+      top: calc(50% - 7.5px);
+    }
+    &::before {
+      height: 10px;
+      width: 10px;
+      background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
+      top: calc(50% - 5px);
+      left: calc(100% + 12.5px);
+      transform: scale(3);
+      opacity: 0;
+      visibility: hidden;
+      transition: 300ms ease ;
+    }
   }
 `;
-
-export { InputStyled, RadioInputStyled };
+export { InputStyled, RadioInputStyled, LabelStyled };
 
 // gradient - background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
 
