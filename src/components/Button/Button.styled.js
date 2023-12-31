@@ -16,7 +16,7 @@ const ButtonStyled = styled.button`
   box-shadow: 5px 5px 10px #2a2e32, -5px -5px 10px #383e44;
   position: relative;
   &:active {
-    transform: translateY(2px);
+    transform: translateY(1px);
   }
   &::after, &::before {
     position: absolute;

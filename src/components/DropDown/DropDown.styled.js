@@ -8,19 +8,39 @@ const DropDownList = styled.ul`
   width: 100%;
   list-style-type: none;
   box-shadow: inset 6px 6px 12px #2c3035, inset -6px -6px 12px #363c41;
-  opacity: ${(props) => (props.$isOpen ? 1 : 0)};
-  transition: height 200ms ease-in;
+  max-height: 0;
+  transition: max-height 300ms ease-out;
+  overflow: hidden;
+  ${props => props.$isOpen && `
+  max-height: 600px;
+  transition: max-height 300ms;
+`}
 `
 const DropDownListItem = styled.li`
   padding: 1rem;
-  z-index: 10;
+  opacity: 0;
+  position: relative;
   cursor: pointer;
-  &:hover {
-    border-radius: 1rem;
-    color: #f96d00;
-    opacity: 0.8;
-    transition: color 100ms ease;
+  ${props => props.$isOpen && `
+    opacity: 1;
+    transition: opacity 300ms 100ms;
+`}
+&::after {
+  position:absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height:100%;
+  content:"";
+  background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
+  opacity: 0;
+  transition: opacity 200ms;
+}
+&:hover {
+  &::after {
+    opacity: 0.2;
   }
+}
 `
 const DropdownContainer = styled.div`
   position: relative;
@@ -37,18 +57,18 @@ const DropdownContainer = styled.div`
 `;
 
 const DropDownBtn = styled.button`
+display: flex;
 background: none;
 border: none;
 color: #f96d00;
-    &::after {
-        content: ">";
-        display: block;
-        transform: rotate(90deg);
-        color: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
-        cursor: pointer;
-        font-size: 1.6rem;
-        opacity: 0.8;
-    }
+font-size: 2rem;
+cursor: pointer;
+transform-style: preserve-3d;
+transition: transform 300ms ease-out;
+${props => props.$isOpen && `
+  transform: rotateX(180deg);
+  transition: transform 200ms;
+`}
 `;
 
 

@@ -5,6 +5,7 @@ import {
   DropDownList,
   DropDownListItem,
 } from "./DropDown.styled";
+import { IoMdArrowDropdown } from "react-icons/io";
 
 const DropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,12 +14,12 @@ const DropDown = () => {
     <DropdownContainer>
         <div>Drop</div>
       <DropDownList $isOpen={isOpen}>
-       <DropDownListItem>Item 1</DropDownListItem>
-       <DropDownListItem>Item 2</DropDownListItem>
-       <DropDownListItem>Item 2</DropDownListItem>
-       <DropDownListItem>Item 2</DropDownListItem>
+       <DropDownListItem $isOpen={isOpen}>Item 1</DropDownListItem>
+       <DropDownListItem $isOpen={isOpen}>Item 2</DropDownListItem>
+       <DropDownListItem $isOpen={isOpen}>Item 2</DropDownListItem>
+       <DropDownListItem $isOpen={isOpen}>Item 2</DropDownListItem>
       </DropDownList>
-      <DropDownBtn onClick={() => {setIsOpen(!isOpen);console.log(isOpen)}}></DropDownBtn>
+      <DropDownBtn onClick={() => {setIsOpen(!isOpen);console.log(isOpen)}} $isOpen={isOpen}><IoMdArrowDropdown /></DropDownBtn>
     </DropdownContainer>
   );
 };
