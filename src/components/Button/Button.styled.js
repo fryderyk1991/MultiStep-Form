@@ -5,29 +5,50 @@ const ButtonStyled = styled.button`
   padding: 1rem 3rem;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
-  color: #31353A;
+  cursor: pointer;
+  color: #f96d00;
   font-size: 2rem;
   cursor: pointer;
-  position: relative;
   overflow: hidden;
   transition: transform 0.3s;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
-    border-radius: 10px;
-    z-index: -1;
-  }
+  border-radius: 10px;
+  background: #31363b;
+  box-shadow: 5px 5px 10px #2a2e32, -5px -5px 10px #383e44;
+  position: relative;
   &:active {
-    transform: translateY(1px);
+    transform: translateY(2px);
   }
-  &:hover {
-    color: black;
-    transition: color 300ms;
+  &::after, &::before {
+    position: absolute;
+    background-color: #929aab;
+    content: "";
+    opacity: 0.1;
+    transition: width 0.3s;
+    z-index: 0;
+  }
+  &::after {
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  &::before {
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  &:hover  {
+    &::before {
+      width: 50%;
+    }
+    &::after {
+      width: 50%;
+    }
   }
 `;
 

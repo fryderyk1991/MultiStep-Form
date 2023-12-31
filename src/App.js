@@ -8,9 +8,9 @@ const App = () => {
     <>
       <ResetStyle />
       <GlobalStyle />
-      <Button/>
       {/* <Input />
       <Label>Male</Label> */}
+      <Button />
     </>
   );
 }
