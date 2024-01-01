@@ -11,14 +11,14 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.6rem;
         font-family: Arial, Helvetica, sans-serif;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
         background-color: #31353A;
         color: #929aab;
     }
     label, input {
         color: inherit;
-        /* display: block; */
+        display: block;
     }
 `;
 

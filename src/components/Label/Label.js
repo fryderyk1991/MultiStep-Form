@@ -1,7 +1,9 @@
 import { LabelStyled } from "../Input/Input.styled";
-const Label = ({children}) => {
+const Label = ({ children, htmlFor}) => {
   return (
-    <LabelStyled htmlFor="radioInput">{children}</LabelStyled>
+    <LabelStyled htmlFor={htmlFor}>
+      {children}
+    </LabelStyled>
   );
 }; 
 

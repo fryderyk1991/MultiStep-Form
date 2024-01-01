@@ -1,8 +1,7 @@
 import { ButtonStyled } from "./Button.styled";
-import { MdOutlineDoubleArrow } from "react-icons/md";
-const Button = () => {
+const Button = ({children}) => {
     return (
-        <ButtonStyled><MdOutlineDoubleArrow/></ButtonStyled>
+        <ButtonStyled>{children}</ButtonStyled>
     )
 }
 

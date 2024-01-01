@@ -1,7 +1,13 @@
 import { InputStyled, RadioInputStyled } from "./Input.styled";
-const Input = () => {
+const Input = ( { type, name, id } ) => {
     return (
-        <RadioInputStyled id="radioInput"/>
+      <>
+      {type === 'radio' ? (
+        <RadioInputStyled type={type} name={name} id={id}/>
+      ) : (
+        <InputStyled type={type} name={name} />
+      )}
+      </>
     );
 }
 

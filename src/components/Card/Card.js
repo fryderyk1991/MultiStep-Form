@@ -1,8 +1,8 @@
 import { CardStyled } from "./Card.styled";
-const Card = () => {
-    return (
-        <CardStyled></CardStyled>
-    )
-}
+const Card = ({children}) => {
+  return (
+    <CardStyled>{children}</CardStyled>
+  );
+};
 
 export default Card;

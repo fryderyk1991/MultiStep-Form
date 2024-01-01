@@ -9,7 +9,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 
 const DropDown = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [value, setValue] = useState('Drop');
+  const [value, setValue] = useState('List');
 
   const handleValue = (e) => {
     setValue(e.target.textContent)
@@ -19,7 +19,7 @@ const DropDown = () => {
     <DropdownContainer>
         <div>{value}</div>
       <DropDownList $isOpen={isOpen}>
-       <DropDownListItem onClick={(e) => {setIsOpen(!isOpen); handleValue(e)}} $isOpen={isOpen}>Item 1</DropDownListItem>
+       <DropDownListItem onClick={(e) => {setIsOpen(!isOpen);handleValue(e)}} $isOpen={isOpen}>Item 1</DropDownListItem>
        <DropDownListItem onClick={() => {setIsOpen(!isOpen)}} $isOpen={isOpen}>Item 2</DropDownListItem>
        <DropDownListItem onClick={() => {setIsOpen(!isOpen)}} $isOpen={isOpen}>Item 2</DropDownListItem>
        <DropDownListItem onClick={() => {setIsOpen(!isOpen)}} $isOpen={isOpen}>Item 2</DropDownListItem>

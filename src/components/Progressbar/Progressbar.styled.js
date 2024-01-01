@@ -3,6 +3,7 @@ import styled from "styled-components";
 const BarContainer = styled.div`
   width: 300px;
   height: 10px;
+  margin: 0 auto 30px;
   border-radius: 10px;
   background: #31362b;
   box-shadow: inset 8px 8px 16px #292d32, inset -8px -8px 16px #393f49;

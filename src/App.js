@@ -1,18 +1,24 @@
 import ResetStyle from "./components/ResetStyle";
 import GlobalStyle from "./components/GlobalStyle";
+import Form from "./components/Form/Form";
+import Progressbar from "./components/Progressbar/Progressbar";
+import Card from "./components/Card/Card"
 // import Input from "./components/Input/Input";
 // import Label from "./components/Label/Label";
-// import Button from "./components/Button/Button";
-import DropDown from "./components/DropDown/DropDown";
+
 const App = () => {
   return (
     <>
       <ResetStyle />
       <GlobalStyle />
-      {/* <Input />
-      <Label>Male</Label> */}
-      <DropDown />
-      {/* <Button /> */}
+      <Progressbar />
+      <Card>
+      <Form />
+      </Card>
+      
+     
+    {/* <Input />
+    <Label>Male</Label> */}
     </>
   );
 }
