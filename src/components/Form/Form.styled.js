@@ -1,7 +1,14 @@
 import styled from "styled-components";
 
 const FormStyled = styled.form` 
+// formularz
 `;
 
 
-export {FormStyled};
+const FormGroupStyled = styled.div`
+
+    /* opacity: 0; */
+    // form-group
+`;
+
+export {FormStyled, FormGroupStyled};

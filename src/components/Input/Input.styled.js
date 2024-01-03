@@ -15,6 +15,7 @@ const RadioInputStyled = styled.input.attrs({ type: "radio" })`
   display: none;
 `;
 const LabelStyled = styled.label`
+  font-size: 1.3rem;
   position: relative;
   cursor: pointer;
   width: 50%;

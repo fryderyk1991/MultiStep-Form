@@ -1,15 +1,18 @@
 const steps = [
     {
         id: 1,
-        name: 'First step'
+        name: 'First step',
+        active: true,
     },
     {
         id: 2,
-        name: 'Second step'
+        name: 'Second step',
+        active: false,
     },
     {
         id: 3,
-        name: 'Third step'
+        name: 'Third step',
+        active: false,
     }
 ];
 

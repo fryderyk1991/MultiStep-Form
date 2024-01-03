@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+
+const ButtonParentStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+`
+
 const ButtonStyled = styled.button`
   display: flex;
   padding: 1rem 3rem;
@@ -7,7 +14,7 @@ const ButtonStyled = styled.button`
   border: none;
   cursor: pointer;
   color: #f96d00;
-  font-size: 2rem;
+  font-size: 1.6rem;
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s;
@@ -52,4 +59,4 @@ const ButtonStyled = styled.button`
   }
 `;
 
-export { ButtonStyled };
+export { ButtonStyled, ButtonParentStyled };

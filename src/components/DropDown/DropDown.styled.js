@@ -4,6 +4,7 @@ const DropDownList = styled.ul`
   position: absolute;
   top: 45px;
   border-radius: 10px;
+  background: #31363b;
   left: 0;
   width: 100%;
   list-style-type: none;
@@ -11,14 +12,15 @@ const DropDownList = styled.ul`
   max-height: 0;
   transition: max-height 300ms ease-out;
   overflow: hidden;
+  z-index: 10;
   ${props => props.$isOpen && `
   max-height: 600px;
-  transition: max-height 300ms;
+  transition: max-height 300ms ease-out;
 `}
 `
 const DropDownListItem = styled.li`
-  padding: 1rem;
-  opacity: 0;
+  padding: 1.5rem;
+  opacity: 1;
   position: relative;
   cursor: pointer;
   ${props => props.$isOpen && `
@@ -35,17 +37,25 @@ const DropDownListItem = styled.li`
   background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
   opacity: 0;
   transition: opacity 200ms;
+  z-index: 10
 }
 &:hover {
   &::after {
     opacity: 0.2;
   }
 }
+${props => props.$isOpen && `
+    opacity: 1;
+    transition: opacity 300ms 100ms;
+    &:after {
+      opacity: 0.2;
+    }
+  `}
 `
 const DropdownContainer = styled.div`
   position: relative;
   padding: 1.2rem 1rem;
-  width: 100px;
+  width: 200%;
   height: 40px;
   border-radius: 10px;
   border: none;
