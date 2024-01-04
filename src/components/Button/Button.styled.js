@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-
 const ButtonParentStyled = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${props => props.$isStep1 ? 'flex-end' : 'space-between'};
   margin-top: 4rem;
+  width: 100%;
 `
 
 const ButtonStyled = styled.button`
   display: flex;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   border-radius: 10px;
   border: none;
   cursor: pointer;

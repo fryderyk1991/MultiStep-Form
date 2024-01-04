@@ -29,7 +29,7 @@ const DropDown = ( {options, onChange, value} ) => {
            value={option.value}
            onChange={() => onChange(option.value)}
            checked={value === option.value}/>
-          <label htmlFor={option.value}>{option.label}</label>
+          <label htmlFor={option.value}>{option.value}</label>
         </DropDownListItem>
       ))}
        {/* <DropDownListItem onClick={(e) => {setIsOpen(!isOpen);handleValue(e)}} $isOpen={isOpen}>Item 1</DropDownListItem>

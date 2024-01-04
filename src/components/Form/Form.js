@@ -11,7 +11,7 @@ import { ButtonParentStyled } from "../Button/Button.styled";
 import { IoMdArrowRoundBack, IoMdArrowRoundForward  } from "react-icons/io";
 
 
-const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep }) => {
+const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handleChecked }) => {
   const handleDropdownChange = (e) => {
     console.log(e);
   };
@@ -30,6 +30,8 @@ const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep }) => {
                         type={field.type}
                         name={field.name}
                         id={field.name}
+                        value={field.value}
+                        onChange={(e) => handleChecked(e)}
                       />
                     )}
                     <Label htmlFor={field.name}>
@@ -50,7 +52,7 @@ const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep }) => {
                     </Label>
                   </React.Fragment>
                 ))}
-              <ButtonParentStyled>
+              <ButtonParentStyled $isStep1={step.id === 1}>
                 {step.id === 1 ? (
                   <Button
                     type="button"
