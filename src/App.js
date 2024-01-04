@@ -12,8 +12,11 @@ const App = () => {
     e.preventDefault();
     console.log('submit')
   }
-  const nextStepHandle = (next, prev) => {
+  const nextStepHandle = (next) => {
     setActiveStep(next);
+  }
+  const prevStepHandle = (prev) => {
+    setActiveStep(prev);
   }
   return (
     <>
@@ -21,7 +24,7 @@ const App = () => {
       <GlobalStyle />
       <Progressbar />
       <Card>
-      <Form handleSubmit={handleSubmit} nextStepHandle={nextStepHandle} activeStep={activeStep}/>
+      <Form handleSubmit={handleSubmit} nextStepHandle={nextStepHandle} prevStepHandle={prevStepHandle} activeStep={activeStep}/>
       </Card>
     </>
   );
