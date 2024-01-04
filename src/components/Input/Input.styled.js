@@ -18,7 +18,6 @@ const LabelStyled = styled.label`
   font-size: 1.3rem;
   position: relative;
   cursor: pointer;
-  width: 50%;
   margin-bottom: 2rem;
   ${RadioInputStyled}:checked + &::before {
     opacity: 1;

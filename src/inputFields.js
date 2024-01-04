@@ -50,7 +50,7 @@ const inputs = [
     {
         label: 'Experience',
         name: 'experience',
-        type: 'number',
+        type: 'text',
         required: true,
         stepId: 2,
     },

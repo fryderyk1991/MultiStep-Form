@@ -19,14 +19,9 @@ const App = () => {
   const prevStepHandle = (prev) => {
     setActiveStep(prev);
   }
-  const handleChecked = (e) => {
-    if(e.target.value) {
-      setGender(e.target.value);
-    }
-    else {
-      setGender(gender)
-    }
-    
+  ///checkbox
+  const handleChecked = (value) => {
+   setGender(value);
   } 
   return (
     <>
@@ -34,7 +29,7 @@ const App = () => {
       <GlobalStyle />
       <Progressbar />
       <Card>
-      <Form handleSubmit={handleSubmit} nextStepHandle={nextStepHandle} prevStepHandle={prevStepHandle} activeStep={activeStep} handleChecked={handleChecked}/>
+      <Form handleSubmit={handleSubmit} nextStepHandle={nextStepHandle} prevStepHandle={prevStepHandle} activeStep={activeStep} handleChecked={handleChecked} gender={gender}/>
       </Card>
     </>
   );

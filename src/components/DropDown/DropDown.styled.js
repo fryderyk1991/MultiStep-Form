@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const DropDownList = styled.ul`
+const DropdownList = styled.ul`
   position: absolute;
   top: 45px;
   border-radius: 10px;
@@ -18,7 +18,7 @@ const DropDownList = styled.ul`
   transition: max-height 300ms ease-out;
 `}
 `
-const DropDownListItem = styled.li`
+const DropdownListItem = styled.li`
   padding: 1.5rem;
   opacity: 1;
   position: relative;
@@ -66,7 +66,7 @@ const DropdownContainer = styled.div`
   align-items: center;
 `;
 
-const DropDownBtn = styled.button`
+const DropdownBtn = styled.button`
 display: flex;
 background: none;
 border: none;
@@ -84,4 +84,4 @@ ${props => props.$isOpen && `
 
 
 
-export {DropdownContainer, DropDownBtn, DropDownList, DropDownListItem}
+export {DropdownContainer, DropdownBtn, DropdownList, DropdownListItem}

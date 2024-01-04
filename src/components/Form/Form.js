@@ -5,16 +5,12 @@ import steps from "../../formSteps";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
 import { RadioInputStyled } from "../Input/Input.styled";
-import DropDown from "../DropDown/DropDown";
 import Button from "../Button/Button";
 import { ButtonParentStyled } from "../Button/Button.styled";
 import { IoMdArrowRoundBack, IoMdArrowRoundForward  } from "react-icons/io";
 
 
-const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handleChecked }) => {
-  const handleDropdownChange = (e) => {
-    console.log(e);
-  };
+const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handleChecked, gender }) => {
   return (
     <FormStyled onSubmit={handleSubmit}>
       {steps.map(
@@ -31,18 +27,13 @@ const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handle
                         name={field.name}
                         id={field.name}
                         value={field.value}
-                        onChange={(e) => handleChecked(e)}
+                        checked={gender === field.value}
+                        onChange={() => handleChecked(field.value)}
                       />
                     )}
                     <Label htmlFor={field.name}>
                       {field.label}
-                      {field.type === "dropdown" ? (
-                        <DropDown
-                          options={field.options}
-                          onChange={handleDropdownChange}
-                          value={field.value}
-                        />
-                      ) : field.type !== "radio" ? (
+                      {field.type !== "radio" ? (
                         <Input
                           name={field.name}
                           type={field.type}
@@ -51,6 +42,7 @@ const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handle
                       ) : null}
                     </Label>
                   </React.Fragment>
+                  
                 ))}
               <ButtonParentStyled $isStep1={step.id === 1}>
                 {step.id === 1 ? (
