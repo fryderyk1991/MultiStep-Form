@@ -8,9 +8,16 @@ import { RadioInputStyled } from "../Input/Input.styled";
 import Button from "../Button/Button";
 import { ButtonParentStyled } from "../Button/Button.styled";
 import { IoMdArrowRoundBack, IoMdArrowRoundForward  } from "react-icons/io";
+import Dropdown from "../Dropdown/Dropdown";
 
-
-const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handleChecked, gender }) => {
+const Form = ({
+  handleSubmit,
+  nextStepHandle,
+  prevStepHandle,
+  activeStep,
+  handleChecked,
+  gender,
+}) => {
   return (
     <FormStyled onSubmit={handleSubmit}>
       {steps.map(
@@ -31,6 +38,14 @@ const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handle
                         onChange={() => handleChecked(field.value)}
                       />
                     )}
+                    {field.type === "dropdown" && (
+                        <Dropdown
+                        type={field.type}
+                        name={field.name}
+                        options={field.options}
+                        value={field.value}
+                      />
+                    )}
                     <Label htmlFor={field.name}>
                       {field.label}
                       {field.type !== "radio" ? (
@@ -42,7 +57,6 @@ const Form = ({ handleSubmit, nextStepHandle, prevStepHandle, activeStep, handle
                       ) : null}
                     </Label>
                   </React.Fragment>
-                  
                 ))}
               <ButtonParentStyled $isStep1={step.id === 1}>
                 {step.id === 1 ? (

@@ -22,6 +22,7 @@ const App = () => {
   ///checkbox
   const handleChecked = (value) => {
    setGender(value);
+   console.log(value)
   } 
   return (
     <>

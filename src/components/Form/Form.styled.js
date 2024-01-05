@@ -6,7 +6,6 @@ const FormStyled = styled.form`
 
 
 const FormGroupStyled = styled.div`
-
     /* opacity: 0; */
     // form-group
 `;

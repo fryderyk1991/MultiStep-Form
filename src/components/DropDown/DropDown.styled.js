@@ -55,7 +55,6 @@ ${props => props.$isOpen && `
 const DropdownContainer = styled.div`
   position: relative;
   padding: 1.2rem 1rem;
-  width: 200%;
   height: 40px;
   border-radius: 10px;
   border: none;
