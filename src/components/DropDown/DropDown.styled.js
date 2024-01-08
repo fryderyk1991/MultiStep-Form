@@ -10,12 +10,12 @@ const DropdownList = styled.ul`
   list-style-type: none;
   box-shadow: inset 6px 6px 12px #2c3035, inset -6px -6px 12px #363c41;
   max-height: 0;
-  transition: max-height 300ms ease-out;
+  transition: max-height 300ms ease-in-out;
   overflow: hidden;
   z-index: 10;
   ${props => props.$isOpen && `
   max-height: 600px;
-  transition: max-height 300ms ease-out;
+  transition: max-height 300ms ease-in-out;
 `}
 `
 const DropdownListItem = styled.li`
@@ -23,10 +23,6 @@ const DropdownListItem = styled.li`
   opacity: 1;
   position: relative;
   cursor: pointer;
-  ${props => props.$isOpen && `
-    opacity: 1;
-    transition: opacity 300ms 100ms;
-`}
 &::after {
   position:absolute;
   top: 0;
@@ -34,7 +30,6 @@ const DropdownListItem = styled.li`
   width:100%;
   height:100%;
   content:"";
-  background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
   opacity: 0;
   transition: opacity 200ms;
   z-index: 10
@@ -42,6 +37,7 @@ const DropdownListItem = styled.li`
 &:hover {
   &::after {
     opacity: 0.2;
+    background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
   }
 }
 ${props => props.$isOpen && `
@@ -53,6 +49,7 @@ ${props => props.$isOpen && `
   `}
 `
 const DropdownContainer = styled.div`
+  user-select: none;
   position: relative;
   padding: 1.2rem 1rem;
   height: 40px;
@@ -63,6 +60,7 @@ const DropdownContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 3px;
 `;
 
 const DropdownBtn = styled.button`

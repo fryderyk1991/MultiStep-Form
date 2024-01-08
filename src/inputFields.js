@@ -30,13 +30,11 @@ const inputs = [
         stepId: 1,
     },
     {
-        label: 'Custom Dropdown',
-        name: 'custom Dropdown',
+        label: 'Dropdown',
+        name: 'dropdown',
         type: 'dropdown',
-        options: [
-          { label: 'Option 1', value: 'option1' },
-          { label: 'Option 2', value: 'option2' },
-        ],
+        // dropdownValue: 'Dropdown',
+        options: ['Item 1', 'Item 2', 'Item 3'],
         required: true,
         stepId: 2
     },

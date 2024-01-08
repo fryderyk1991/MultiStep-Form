@@ -8,7 +8,6 @@ import { RadioInputStyled } from "../Input/Input.styled";
 import Button from "../Button/Button";
 import { ButtonParentStyled } from "../Button/Button.styled";
 import { IoMdArrowRoundBack, IoMdArrowRoundForward  } from "react-icons/io";
-import Dropdown from "../Dropdown/Dropdown";
 
 const Form = ({
   handleSubmit,
@@ -17,6 +16,9 @@ const Form = ({
   activeStep,
   handleChecked,
   gender,
+  handleChangeInput,
+  selected,
+  setSelected
 }) => {
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -38,21 +40,17 @@ const Form = ({
                         onChange={() => handleChecked(field.value)}
                       />
                     )}
-                    {field.type === "dropdown" && (
-                        <Dropdown
-                        type={field.type}
-                        name={field.name}
-                        options={field.options}
-                        value={field.value}
-                      />
-                    )}
                     <Label htmlFor={field.name}>
                       {field.label}
-                      {field.type !== "radio" ? (
+                      {field.type !== "radio"  ? (
                         <Input
                           name={field.name}
                           type={field.type}
                           id={field.name}
+                          onChange={(e) => handleChangeInput(e)}
+                          options={field.options}
+                          selected={selected}
+                          setSelected={setSelected}
                         />
                       ) : null}
                     </Label>
@@ -101,3 +99,5 @@ const Form = ({
 };
 
 export default Form;
+
+

@@ -8,16 +8,18 @@ import {
 import { IoMdArrowDropdown } from "react-icons/io";
 
 
-const Dropdown = ( { type, name, options, value } ) => {
+const Dropdown = ( { options, selected, setSelected} ) => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <DropdownContainer>
-        <div>Drop</div>
-      <DropdownList $isOpen={isOpen}>
-       <DropdownListItem onClick={(e) => {setIsOpen(!isOpen)}} $isOpen={isOpen}>Item 1</DropdownListItem>
-       <DropdownListItem onClick={() => {setIsOpen(!isOpen)}} $isOpen={isOpen}>Item 2</DropdownListItem>
-      </DropdownList>
+        {selected}
+           <DropdownList $isOpen={isOpen}>
+            {options.map((option, index) => (
+              <DropdownListItem key={index} onClick={() => {setSelected(option)
+                setIsOpen(!isOpen)
+              }}>{option}</DropdownListItem>
+            ))}
+          </DropdownList>
       <DropdownBtn type="button" onClick={() => {setIsOpen(!isOpen)}} $isOpen={isOpen}><IoMdArrowDropdown /></DropdownBtn>
     </DropdownContainer>
   );
