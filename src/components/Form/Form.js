@@ -18,7 +18,9 @@ const Form = ({
   gender,
   handleChangeInput,
   selected,
-  setSelected
+  setSelected,
+  errors,
+  values
 }) => {
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -35,11 +37,11 @@ const Form = ({
                         type={field.type}
                         name={field.name}
                         id={field.name}
-                        value={field.value}
                         checked={gender === field.value}
                         onChange={() => handleChecked(field.value)}
                       />
                     )}
+
                     <Label htmlFor={field.name}>
                       {field.label}
                       {field.type !== "radio"  ? (
@@ -51,8 +53,10 @@ const Form = ({
                           options={field.options}
                           selected={selected}
                           setSelected={setSelected}
+                          value={values[field.name]} 
                         />
                       ) : null}
+                      {errors[field.name] ? <span style={{ color: 'red' }}>{errors[field.name]}</span> : null}
                     </Label>
                   </React.Fragment>
                 ))}

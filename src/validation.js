@@ -1,17 +1,11 @@
-const validation = (values, rules) => {
-    const errors = {};
+const validateInput = (name, value) => {
+    if (value.trim() === "") {
+      return `Field is required!`;
+    }
+    if (name === "email" && !value.includes('@')) {
+      return `Please enter a valid email address!`;
+    }
+    return "";
+  };
 
-    Object.keys(values).forEach((key) => {
-        const rule = rules.find(r => r.name === key)
-        const value = values[key];
-        if(rule.required) {
-            if(value.length > 0) {
-                errors[key] = 'field is empty!';
-            }
-         }
-    })
-
-    return errors;
-}
-
-export default validation;
+  export default validateInput

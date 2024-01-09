@@ -20,6 +20,7 @@ const inputs = [
         value: 'male',
         required: true,
         stepId: 1,
+        checked: false
     },
     {
         label: 'Female',
@@ -28,12 +29,12 @@ const inputs = [
         value: 'female',
         required: true,
         stepId: 1,
+        checked: false
     },
     {
         label: 'Dropdown',
         name: 'dropdown',
         type: 'dropdown',
-        // dropdownValue: 'Dropdown',
         options: ['Item 1', 'Item 2', 'Item 3'],
         required: true,
         stepId: 2

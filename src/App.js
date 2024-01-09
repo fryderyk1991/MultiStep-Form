@@ -4,60 +4,84 @@ import Form from "./components/Form/Form";
 import Progressbar from "./components/Progressbar/Progressbar";
 import Card from "./components/Card/Card";
 import { useState } from "react";
-import validation from "./validation";
-import inputs from "./inputFields";
+import validateInput from "./validation"
 
 const App = () => {
   const [activeStep, setActiveStep] = useState(1);
   const [gender, setGender] = useState('');
   const [selected, setSelected] = useState('Select item');
-  // const [values, setValues] = useState({
-  //   firstName: '',
-  //   lastName: '',
-  //   email: '',
-  //   experience: '',
-  //   country: '',
-  //   city: '',
-  //   street: '',
-  // });
-
-  // const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    experience: "",
+    country: "",
+    city: "",
+    street: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [progress, setProgress] = useState(0);
 
   const handleChangeInput = (e) => {
-    // console.log(e.target.value);
-    // setValues(e.target.value)
-    // setErrors(validation(values, inputs));
-    // console.log(errors)
-    console.log(e.target.value)
-  }
+    const { name, value } = e.target;
+    setValues((prevValues) => ({ ...prevValues, [name]: value }));
+    const updatedErrors = { ...errors, [name]: validateInput(name, value) };
+    setErrors(updatedErrors);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    pushProgress(values);
+  };
 
-    if (gender) {
-      console.log('działa')
+  const pushProgress = (values) => {
+    let filledFields = 0;
+
+    for (const key in values) {
+      if (values[key] !== "") {
+        filledFields++;
+      }
     }
-  }
+
+    setProgress(filledFields * 14.3);
+  };
+  
+  
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
+    for (const key in values) {
+      if (values[key] !== "") {
+        if(gender && selected) {
+          console.log(values)
+        }
+      }
+    }
+  };
   const nextStepHandle = (next) => {
-    setActiveStep(next);
+    setActiveStep(next)
   }
   const prevStepHandle = (prev) => {
     setActiveStep(prev);
   }
-  ///checkbox
   const handleChecked = (value) => {
-   setGender(value);
-   console.log(value) 
-
-   // jezeli gender bedzie puste nie idziemy dalej
+    setGender(value);
   } 
   return (
     <>
       <ResetStyle />
       <GlobalStyle />
-      <Progressbar />
+      <Progressbar progress={progress} />
       <Card>
-      <Form handleSubmit={handleSubmit} nextStepHandle={nextStepHandle} prevStepHandle={prevStepHandle} activeStep={activeStep} handleChecked={handleChecked} gender={gender} selected={selected} setSelected={setSelected} handleChangeInput={handleChangeInput}/>
+        <Form
+          handleSubmit={handleSubmit}
+          nextStepHandle={nextStepHandle}
+          prevStepHandle={prevStepHandle}
+          activeStep={activeStep}
+          handleChecked={handleChecked}
+          gender={gender}
+          selected={selected}
+          setSelected={setSelected}
+          handleChangeInput={handleChangeInput}
+          errors={errors}
+          values={values}
+        />
       </Card>
     </>
   );

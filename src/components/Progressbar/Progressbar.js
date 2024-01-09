@@ -1,8 +1,8 @@
 import { BarContainer, Bar } from "./Progressbar.styled";
-const Progressbar = () => {
+const Progressbar = ( {progress} ) => {
     return (
         <BarContainer>
-            <Bar/> 
+            <Bar $progress={progress} /> 
         </BarContainer>
     )
 }

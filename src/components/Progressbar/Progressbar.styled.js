@@ -10,7 +10,8 @@ const BarContainer = styled.div`
 `;
 
 const Bar = styled.div`
-    width: 25%;
+    width: ${(props) => props.$progress}%;
+    transition: width 0.5s ease;
     height: 100%;
     border-radius: 10px;
     background: linear-gradient(107deg, rgb(255, 67, 5) 11.1%, rgb(245, 135, 0) 95.3%);
