@@ -13,6 +13,11 @@ const steps = [
         id: 3,
         name: 'Third step',
         active: false,
+    },
+    {
+        id: 4,
+        name: 'Fourth step',
+        active: false,
     }
 ];
 

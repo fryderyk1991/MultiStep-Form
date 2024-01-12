@@ -5,9 +5,8 @@ import steps from "../../formSteps";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
 import { RadioInputStyled } from "../Input/Input.styled";
-import Button from "../Button/Button";
 import { ButtonParentStyled } from "../Button/Button.styled";
-import { IoMdArrowRoundBack, IoMdArrowRoundForward  } from "react-icons/io";
+import stepButtonsConfig from "../../buttonsConfig";
 
 const Form = ({
   handleSubmit,
@@ -20,8 +19,11 @@ const Form = ({
   selected,
   setSelected,
   errors,
-  values
+  values,
 }) => {
+
+  const stepButtons = stepButtonsConfig(nextStepHandle, prevStepHandle, activeStep);
+
   return (
     <FormStyled onSubmit={handleSubmit}>
       {steps.map(
@@ -41,10 +43,9 @@ const Form = ({
                         onChange={() => handleChecked(field.value)}
                       />
                     )}
-
                     <Label htmlFor={field.name}>
                       {field.label}
-                      {field.type !== "radio"  ? (
+                      {field.type !== "radio" ? (
                         <Input
                           name={field.name}
                           type={field.type}
@@ -53,47 +54,19 @@ const Form = ({
                           options={field.options}
                           selected={selected}
                           setSelected={setSelected}
-                          value={values[field.name]} 
+                          value={values[field.name]}
                         />
                       ) : null}
-                      {errors[field.name] ? <span style={{ color: 'red' }}>{errors[field.name]}</span> : null}
+                      {errors[field.name] ? (
+                        <span style={{ color: "red" }}>
+                          {errors[field.name]}
+                        </span>
+                      ) : null}
                     </Label>
                   </React.Fragment>
                 ))}
               <ButtonParentStyled $isStep1={step.id === 1}>
-                {step.id === 1 ? (
-                  <Button
-                    type="button"
-                    onClick={() => nextStepHandle(step.id + 1)}
-                  >
-                    <IoMdArrowRoundForward size={20} />
-                  </Button>
-                ) : step.id === 2 ? (
-                  <>
-                    <Button
-                      type="button"
-                      onClick={() => prevStepHandle(step.id - 1)}
-                    >
-                      <IoMdArrowRoundBack size={20} />
-                    </Button>
-                    <Button
-                      type="button"
-                      onClick={() => nextStepHandle(step.id + 1)}
-                    >
-                      <IoMdArrowRoundForward size={20} />
-                    </Button>
-                  </>
-                ) : step.id === 3 ? (
-                  <>
-                    <Button
-                      type="button"
-                      onClick={() => prevStepHandle(step.id - 1)}
-                    >
-                      <IoMdArrowRoundBack size={20} />
-                    </Button>
-                    <Button type="submit">Submit</Button>
-                  </>
-                ) : null}
+              {stepButtons[step.id]}
               </ButtonParentStyled>
             </FormGroupStyled>
           )

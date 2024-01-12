@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const FormStyled = styled.form` 
-// formularz
+    
 `;
 
 
 const FormGroupStyled = styled.div`
-    /* opacity: 0; */
-    // form-group
+    /* opacity: ${props => (props.$isActive ? 1 : 0)};
+    transition: opacity 300ms ease-in-out; */
 `;
 
 export {FormStyled, FormGroupStyled};

@@ -4,7 +4,8 @@ import Form from "./components/Form/Form";
 import Progressbar from "./components/Progressbar/Progressbar";
 import Card from "./components/Card/Card";
 import { useState } from "react";
-import validateInput from "./validation"
+import validateInput from "./validation";
+// import steps from "./formSteps";
 
 const App = () => {
   const [activeStep, setActiveStep] = useState(1);
@@ -54,15 +55,17 @@ const App = () => {
       }
     }
   };
+  
   const nextStepHandle = (next) => {
-    setActiveStep(next)
+    setActiveStep(next);
   }
   const prevStepHandle = (prev) => {
     setActiveStep(prev);
   }
   const handleChecked = (value) => {
     setGender(value);
-  } 
+  }
+
   return (
     <>
       <ResetStyle />
