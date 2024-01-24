@@ -4,7 +4,7 @@ const Input = ( { type, name, id, value, onChange, options, selected, setSelecte
     return (
       <>
       {type === 'radio' ? (
-    <RadioInputStyled type={type} name={name} id={id} value={value} gender={gender}/>
+    <RadioInputStyled type={type} name={name} id={id} value={value} gender={gender} options={options}/>
   ) : type === 'dropdown' ? (
     <Dropdown type={type} name={name} id={id} options={options} selected={selected} setSelected={setSelected} />
   ) : (

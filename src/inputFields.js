@@ -16,8 +16,8 @@ const inputs = [
 
     /// jako jeden element radio
     {
-        label: 'gender',
-        name: 'gender',
+        label: 'Gender',
+        // name: 'gender',
         type: 'radio',
         options: ['male', 'female'],
         required: true,

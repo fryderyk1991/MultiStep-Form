@@ -1,4 +1,3 @@
-
 import Button from '../src/components/Button/Button'
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 

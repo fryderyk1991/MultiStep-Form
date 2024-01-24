@@ -20,6 +20,7 @@ const Form = ({
   setSelected,
   errors,
   values,
+  showStep,
 }) => {
 
   const stepButtons = stepButtonsConfig(nextStepHandle, prevStepHandle, activeStep);
@@ -29,18 +30,18 @@ const Form = ({
       {steps.map(
         (step) =>
           step.id === activeStep && (
-            <FormGroupStyled key={step.id} id={step.id}>
+            <FormGroupStyled key={step.id} id={step.id} $isActive={showStep}>
               {inputs
                 .filter((input) => input.stepId === step.id)
                 .map((field) => (
                   <React.Fragment key={field.name}>
-                    {field.type === "radio" && (
+                    {field.type === "radio" &&  (
                       <RadioInputStyled
                         type={field.type}
                         name={field.name}
                         id={field.name}
-                        checked={gender === field.value}
-                        onChange={() => handleChecked(field.value)}
+                        // checked={gender === field.value}
+                        // onChange={() => handleChecked(field.value)}
                       />
                     )}
                     <Label htmlFor={field.name}>
@@ -51,8 +52,8 @@ const Form = ({
                           type={field.type}
                           id={field.name}
                           onChange={(e) => handleChangeInput(e)}
-                          options={field.options}
                           selected={selected}
+                          options={field.options}
                           setSelected={setSelected}
                           value={values[field.name]}
                         />
