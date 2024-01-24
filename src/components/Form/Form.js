@@ -4,7 +4,7 @@ import inputs from "../../inputFields";
 import steps from "../../formSteps";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
-import { RadioInputStyled } from "../Input/Input.styled";
+// import { RadioInputStyled } from "../Input/Input.styled";
 import { ButtonParentStyled } from "../Button/Button.styled";
 import stepButtonsConfig from "../../buttonsConfig";
 
@@ -13,8 +13,6 @@ const Form = ({
   nextStepHandle,
   prevStepHandle,
   activeStep,
-  handleChecked,
-  gender,
   handleChangeInput,
   selected,
   setSelected,
@@ -33,9 +31,9 @@ const Form = ({
             <FormGroupStyled key={step.id} id={step.id} $isActive={showStep}>
               {inputs
                 .filter((input) => input.stepId === step.id)
-                .map((field) => (
-                  <React.Fragment key={field.name}>
-                    {field.type === "radio" &&  (
+                .map((field, index) => (
+                  <React.Fragment key={index}>
+                    {/* {field.type === "radio" &&  (
                       <RadioInputStyled
                         type={field.type}
                         name={field.name}
@@ -43,7 +41,7 @@ const Form = ({
                         // checked={gender === field.value}
                         // onChange={() => handleChecked(field.value)}
                       />
-                    )}
+                    )} */}
                     <Label htmlFor={field.name}>
                       {field.label}
                       {field.type !== "radio" ? (

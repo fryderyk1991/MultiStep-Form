@@ -15,32 +15,22 @@ const inputs = [
     },
 
     /// jako jeden element radio
+    // {
+    //     label: 'Gender',
+    //     // name: 'gender',
+    //     type: 'radio',
+    //     options: ['male', 'female'],
+    //     required: true,
+    //     stepId: 1,
+    // },
     {
-        label: 'Gender',
-        // name: 'gender',
         type: 'radio',
+        name: 'gender',
         options: ['male', 'female'],
+        labels: ['Male', 'Female'],
         required: true,
         stepId: 1,
     },
-    // {
-    //     label: 'Male',
-    //     name: 'male',
-    //     type: 'radio',
-    //     value: 'male',
-    //     required: true,
-    //     stepId: 1,
-    //     checked: false
-    // },
-    // {
-    //     label: 'Female',
-    //     name: 'female',
-    //     type: 'radio',
-    //     value: 'female',
-    //     required: true,
-    //     stepId: 1,
-    //     checked: false
-    // },
     {
         label: 'Dropdown',
         name: 'dropdown',

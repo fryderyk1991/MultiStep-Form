@@ -14,11 +14,6 @@ const steps = [
         name: 'Third step',
         active: false,
     },
-    {
-        id: 4,
-        name: 'Fourth step',
-        active: false,
-    }
 ];
 
 
