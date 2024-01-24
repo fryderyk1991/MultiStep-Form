@@ -1,5 +1,5 @@
 # Multistep-Form 
-I would like to present you live version of [MultiStep-Form](link).
+I would like to present you live version of [Multistep-Form](link).
 
 Form styles are based on Neuphorism theme. I used StyledComponents in this project.
 
