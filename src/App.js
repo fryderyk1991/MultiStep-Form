@@ -3,7 +3,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import Form from "./components/Form/Form";
 import Progressbar from "./components/Progressbar/Progressbar";
 import Card from "./components/Card/Card";
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import validateInput from "./validation";
 // import steps from "./formSteps";
 
