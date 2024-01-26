@@ -11,6 +11,7 @@ const App = () => {
   const [activeStep, setActiveStep] = useState(1);
   // const [showStep, setShowStep] = useState(false);
   const [selected, setSelected] = useState('Select item');
+  const [isChecked, setIsChecked] = useState('')
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -45,7 +46,6 @@ const App = () => {
         filledFields++;
       }
     }
-    console.log(values.firstName)
     setProgress(filledFields * 14.3);
   };
   
@@ -84,7 +84,7 @@ const App = () => {
     // setShowStep(true)
   }
   const handleChecked = (value) => {
-    console.log(value)
+    setIsChecked(value)
   }
 
   return (

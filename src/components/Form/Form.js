@@ -4,7 +4,7 @@ import inputs from "../../inputFields";
 import steps from "../../formSteps";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
-// import { RadioInputStyled } from "../Input/Input.styled";
+import { RadioInputStyled } from "../Input/Input.styled";
 import { ButtonParentStyled } from "../Button/Button.styled";
 import stepButtonsConfig from "../../buttonsConfig";
 
@@ -14,6 +14,7 @@ const Form = ({
   prevStepHandle,
   activeStep,
   handleChangeInput,
+  handleChecked,
   selected,
   setSelected,
   errors,
@@ -33,15 +34,25 @@ const Form = ({
                 .filter((input) => input.stepId === step.id)
                 .map((field, index) => (
                   <React.Fragment key={index}>
-                    {/* {field.type === "radio" &&  (
-                      <RadioInputStyled
-                        type={field.type}
-                        name={field.name}
-                        id={field.name}
-                        // checked={gender === field.value}
-                        // onChange={() => handleChecked(field.value)}
-                      />
-                    )} */}
+                    {field.type === "radio" &&  (
+                      <>
+                      {field.labels.map((label, labelIndex) => (
+                        <React.Fragment key={labelIndex}>
+                          <RadioInputStyled
+                            type={field.type}
+                            name={field.name}
+                            id={`${field.name}_${labelIndex}`}
+                            value={label}
+                            checked={values[field.name] === label}
+                            onChange={(e) => {handleChangeInput(e); handleChecked(label)}}
+                          />
+                          <Label htmlFor={`${field.name}_${labelIndex}`}>
+                            {label}
+                          </Label>
+                        </React.Fragment>
+                      ))}
+                    </>
+                    )}
                     <Label htmlFor={field.name}>
                       {field.label}
                       {field.type !== "radio" ? (

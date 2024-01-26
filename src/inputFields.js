@@ -13,20 +13,9 @@ const inputs = [
         required: true,
         stepId: 1,
     },
-
-    /// jako jeden element radio
-    // {
-    //     label: 'Gender',
-    //     // name: 'gender',
-    //     type: 'radio',
-    //     options: ['male', 'female'],
-    //     required: true,
-    //     stepId: 1,
-    // },
     {
         type: 'radio',
         name: 'gender',
-        options: ['male', 'female'],
         labels: ['Male', 'Female'],
         required: true,
         stepId: 1,
