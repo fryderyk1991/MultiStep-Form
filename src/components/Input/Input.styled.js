@@ -7,16 +7,16 @@ const InputStyled = styled.input`
   border-radius: 10px;
   border: none;
   box-shadow: inset 6px 6px 12px #2c3035, inset -6px -6px 12px #363c41;
-  caret-color: #929aab;
-  margin-top: 0.3rem;
+  margin: 0.5rem 0;
 `;
 
 const RadioInputStyled = styled.input.attrs({ type: "radio" })`
   display: none;
 `;
 const LabelStyled = styled.label`
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   position: relative;
+  font-weight: 400;
   cursor: pointer;
   margin-bottom: 2rem;
   ${RadioInputStyled}:checked + &::before {

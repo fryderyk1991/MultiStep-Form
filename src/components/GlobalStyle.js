@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
-
 const GlobalStyle = createGlobalStyle`
+
     html {
         font-size: 62.5%;
         height: 100%;
@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         height: 100%;
         font-size: 1.6rem;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: 'Gill Sans', sans-serif;
         display: flex;
         flex-direction: column;
         justify-content: center;

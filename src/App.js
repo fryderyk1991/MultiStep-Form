@@ -3,6 +3,7 @@ import GlobalStyle from "./components/GlobalStyle";
 import Form from "./components/Form/Form";
 import Progressbar from "./components/Progressbar/Progressbar";
 import Card from "./components/Card/Card";
+import Modal from "./components/Modal/Modal";
 import { useState } from "react";
 import validateInput from "./validation";
 // import steps from "./formSteps";
@@ -38,16 +39,13 @@ const App = () => {
     setErrors(updatedErrors);
   };
   const handleDropdownChange = (value) => {
-    // setValues((prevValues) => ({
-    //   ...prevValues,
-    //   dropdown: value,
-    // }));
-    // pushProgress({ dropdown: value });
     setValues((prevValues) => {
       const updatedValues = { ...prevValues, dropdown: value };
       pushProgress(updatedValues);
       return updatedValues;
     });
+    const updatedErrors = { ...errors, dropdown: validateInput('dropdown', value) };
+    setErrors(updatedErrors);
   };
 
   const pushProgress = (values) => {
@@ -73,12 +71,15 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let updatedErrors = {};
     for (const key in values) {
       if (values[key] !== "") {
         /// dodanie modala
+        console.log('your data is submitted', values)
       }
+        updatedErrors[key] = validateInput(key, values[key]);
     }
-    console.log(values);
+    setErrors(updatedErrors);
   };
 
   const nextStepHandle = (next) => {
@@ -91,13 +92,13 @@ const App = () => {
   };
   const handleChecked = (value) => {
     setIsChecked(value);
-    /// tu możemy dodać error
   };
 
   return (
     <>
       <ResetStyle />
       <GlobalStyle />
+      <Modal />
       <Progressbar progress={progress} />
       <Card>
         <Form

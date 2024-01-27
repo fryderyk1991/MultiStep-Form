@@ -70,7 +70,7 @@ const Form = ({
                         />
                       ) : null}
                       {errors[field.name] ? (
-                        <span style={{ color: "red" }}>
+                        <span style={{ color: "red", fontSize: '1.3rem'}}>
                           {errors[field.name]}
                         </span>
                       ) : null}
