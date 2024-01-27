@@ -20,6 +20,7 @@ const Form = ({
   errors,
   values,
   showStep,
+  handleDropdownChange
 }) => {
 
   const stepButtons = stepButtonsConfig(nextStepHandle, prevStepHandle, activeStep);
@@ -65,6 +66,7 @@ const Form = ({
                           options={field.options}
                           setSelected={setSelected}
                           value={values[field.name]}
+                          handleDropdownChange={handleDropdownChange}
                         />
                       ) : null}
                       {errors[field.name] ? (
