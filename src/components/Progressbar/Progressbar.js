@@ -1,7 +1,7 @@
 import { BarContainer, Bar } from "./Progressbar.styled";
-const Progressbar = ( {progress} ) => {
+const Progressbar = ( {progress, showModal} ) => {
     return (
-        <BarContainer>
+        <BarContainer $showModal={showModal}>
             <Bar $progress={progress} /> 
         </BarContainer>
     )

@@ -14,7 +14,6 @@ const Form = ({
   prevStepHandle,
   activeStep,
   handleChangeInput,
-  handleChecked,
   selected,
   setSelected,
   errors,
@@ -45,7 +44,7 @@ const Form = ({
                             id={`${field.name}_${labelIndex}`}
                             value={label}
                             checked={values[field.name] === label}
-                            onChange={(e) => {handleChangeInput(e); handleChecked(label)}}
+                            onChange={(e) => handleChangeInput(e)}
                           />
                           <Label htmlFor={`${field.name}_${labelIndex}`}>
                             {label}
@@ -70,7 +69,7 @@ const Form = ({
                         />
                       ) : null}
                       {errors[field.name] ? (
-                        <span style={{ color: "red", fontSize: '1.3rem'}}>
+                        <span style={{ color: "red", fontSize: '1.3rem', position: 'absolute'}}>
                           {errors[field.name]}
                         </span>
                       ) : null}

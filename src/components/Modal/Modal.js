@@ -1,8 +1,8 @@
 import { MdDone } from "react-icons/md";
 import { ModalContainer, ModalContent, ModalCircle} from "./Modal.styled";
-const Modal = () => {
+const Modal = ( {showModal}) => {
     return (
-        <ModalContainer>
+        <ModalContainer $showModal={showModal}>
             <ModalContent>
                 <ModalCircle>
                 <MdDone />

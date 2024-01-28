@@ -6,13 +6,10 @@ import Card from "./components/Card/Card";
 import Modal from "./components/Modal/Modal";
 import { useState } from "react";
 import validateInput from "./validation";
-// import steps from "./formSteps";
 
 const App = () => {
   const [activeStep, setActiveStep] = useState(1);
-  // const [showStep, setShowStep] = useState(false);
   const [selected, setSelected] = useState('Select item');
-  const [isChecked, setIsChecked] = useState('')
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
@@ -26,6 +23,7 @@ const App = () => {
   });
   const [errors, setErrors] = useState({});
   const [progress, setProgress] = useState(0);
+  const [showModal, setShowModal] = useState(false)
 
 
   const handleChangeInput = (e) => {
@@ -49,7 +47,7 @@ const App = () => {
   };
 
   const pushProgress = (values) => {
-    const totalFields = 9; // Assuming you have 9 fields
+    const totalFields = 9;
     const filledFields = Object.values(values).filter(
       (value) => value.trim() !== ""
     ).length;
@@ -57,25 +55,13 @@ const App = () => {
     setProgress(progress);
   };
 
-  // useEffect(() => {
-  //   // Set isActive to true when next or prev is clicked
-  //   setShowStep(true)
-  //   // Clear isActive after the transition duration (300ms in this case)
-  //   const timeoutId = setTimeout(() => {
-  //     setShowStep(false);
-  //   }, 2000);
-
-  //   // Cleanup the timeout to avoid memory leaks
-  //   return () => clearTimeout(timeoutId);
-  // }, [activeStep]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     let updatedErrors = {};
     for (const key in values) {
       if (values[key] !== "") {
-        /// dodanie modala
-        console.log('your data is submitted', values)
+        setShowModal(true)
       }
         updatedErrors[key] = validateInput(key, values[key]);
     }
@@ -84,29 +70,23 @@ const App = () => {
 
   const nextStepHandle = (next) => {
     setActiveStep(next);
-    // setShowStep(true)
   };
   const prevStepHandle = (prev) => {
     setActiveStep(prev);
-    // setShowStep(true)
-  };
-  const handleChecked = (value) => {
-    setIsChecked(value);
   };
 
   return (
     <>
       <ResetStyle />
       <GlobalStyle />
-      <Modal />
-      <Progressbar progress={progress} />
-      <Card>
+      <Modal showModal={showModal} />
+      <Progressbar progress={progress} showModal={showModal} />
+      <Card showModal={showModal}>
         <Form
           handleSubmit={handleSubmit}
           nextStepHandle={nextStepHandle}
           prevStepHandle={prevStepHandle}
           activeStep={activeStep}
-          handleChecked={handleChecked}
           selected={selected}
           setSelected={setSelected}
           handleChangeInput={handleChangeInput}
@@ -114,7 +94,6 @@ const App = () => {
           values={values}
           setValues={setValues}
           handleDropdownChange={handleDropdownChange}
-          // showStep={showStep}
         />
       </Card>
     </>

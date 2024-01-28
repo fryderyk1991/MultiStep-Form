@@ -1,7 +1,7 @@
 import { CardStyled } from "./Card.styled";
-const Card = ({children}) => {
+const Card = ({children , showModal}) => {
   return (
-    <CardStyled>{children}</CardStyled>
+    <CardStyled $showModal={showModal}>{children}</CardStyled>
   );
 };
 

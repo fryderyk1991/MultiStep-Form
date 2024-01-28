@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 const BarContainer = styled.div`
+ ${(props) =>
+    props.$showModal &&
+    `
+  opacity: 0;
+  visibility: 0;
+`}
   width: 300px;
   height: 10px;
   margin: 0 auto 30px;

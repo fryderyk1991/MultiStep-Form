@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
 const ModalContainer = styled.div`
+  opacity: 0;
+  visibility: hidden;
+  ${(props) =>
+    props.$showModal &&
+    `
+    opacity: 1;
+    visibility: visible;
+  `}
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 10px;
   background: #31363b;
   box-shadow: 5px 5px 10px #2a2e32, -5px -5px 10px #383e44;
@@ -11,6 +23,7 @@ const ModalContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   padding: 4rem;
+  transition: all 500ms ease 1s;
 `;
 const ModalContent = styled.div`
   width: 100%;
