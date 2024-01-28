@@ -59,13 +59,15 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let updatedErrors = {};
-    for (const key in values) {
-      if (values[key] !== "") {
-        setShowModal(true)
-      }
+    const allValuesFilled = Object.keys(values).every((key) => !!values[key]);
+    if (allValuesFilled) {
+      setShowModal(true)
+    } else {
+      for (const key in values) {
         updatedErrors[key] = validateInput(key, values[key]);
+      }
+      setErrors(updatedErrors);
     }
-    setErrors(updatedErrors);
   };
 
   const nextStepHandle = (next) => {
