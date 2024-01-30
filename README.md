@@ -1,10 +1,7 @@
 # Multistep-Form 
-I would like to present you live version of [Multistep-Form](https://sunny-manatee-49fb29.netlify.app).
-
-Form styles are based on Neuphorism theme. I used StyledComponents in this project.
-
-I built couple of reusable components here. Every input is dynamic field, thanks to the component Progressbar, the user also sees the progress of data entry. The user can freely jump between steps in the form. 
-Once the user fills out all the fields and submits the form, he will see a pop-up Modal component with data that he sends.
+I would like to present you with a live version of [Multistep-Form](https://sunny-manatee-49fb29.netlify.app).
+Form styles are based on the Neuphorism theme. I used StyledComponents in this project.
+I built a couple of reusable components here. Every input is a dynamic field, thanks to the component Progressbar, users also see the progress of data entry. Users can freely jump between steps in the form. Once the users fill out all the fields and submit the form, they will see a pop-up Modal component with the data that they send.
 
 ## 💡 Technologies
 <div > <img width="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/> <img width="50" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS"/> <img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/> <img width="50" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React"/> </div>
