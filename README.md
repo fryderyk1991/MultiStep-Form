@@ -1,3 +1,7 @@
+
+![MS1](https://github.com/fryderyk1991/Multistep-form/assets/95125510/a7653edd-3dda-4a61-be9c-b1b0cafa54f1)
+![Ms2](https://github.com/fryderyk1991/Multistep-form/assets/95125510/2500fbbf-0b0f-4eff-b5ba-80c051c758e0)
+
 # Multistep-Form 
 I would like to present you with a live version of [Multistep-Form](https://sunny-manatee-49fb29.netlify.app).
 Form styles are based on the Neuphorism theme. I used StyledComponents in this project.
